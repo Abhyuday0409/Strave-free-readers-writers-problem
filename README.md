@@ -28,6 +28,7 @@ Signal(out)
 # Working segment of writers part will be :- 
 
 Writers :-
+```cpp
 while(1){
 Wait(in)
 Wait(out)
@@ -42,7 +43,7 @@ else{
 //Critical section
 Signal(in) 
 }
-
+```
 # Algorithm :- 
 
 This is a possible implementation of the reader-writer problem using semaphores in the context of multi-threaded programming. Here is an explanation of the algorithm step by step:
