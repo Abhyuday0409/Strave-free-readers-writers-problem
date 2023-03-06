@@ -1,18 +1,18 @@
 # Strave-free-readers-writers-problem
 
-#Initialisation :- 
-
+# Initialisation :- 
+```cpp
 Semaphore in = 1
 Semaphore out = 1
 Semaphore wrt = 0
 ctrin = 0
 ctrout = 0
 boolean wait = false 
-
-#Working segment of readers part will be :- 
+```
+# Working segment of readers part will be :- 
 
 Reader :- 
-
+```cpp
 while(1){
 Wait(in)
 ctrin++
@@ -24,8 +24,8 @@ if(wait==1 && ctrin==ctrout)
     then Signal(wrt)
 Signal(out)
 }
-
-#Working segment of writers part will be :- 
+```
+# Working segment of writers part will be :- 
 
 Writers :-
 while(1){
@@ -43,7 +43,7 @@ else{
 Signal(in) 
 }
 
-#Algorithm :- 
+# Algorithm :- 
 
 This is a possible implementation of the reader-writer problem using semaphores in the context of multi-threaded programming. Here is an explanation of the algorithm step by step:
 
