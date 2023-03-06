@@ -1,5 +1,20 @@
 # Strave-free-readers-writers-problem
 
+# Explanation
+```py
+In the readers-writers problem, multiple readers can access the shared resource simultaneously, but only one writer can access it at a time. This is because a writer may modify the resource, and if multiple writers access it concurrently, they may overwrite each other's changes or create inconsistent data.
+
+To ensure mutual exclusion between readers and writers, a solution is implemented using semaphores, a type of synchronization mechanism that controls access to shared resources. In this case, two semaphores are used: one to keep track of the number of active readers, and one to indicate whether a writer is currently accessing the resource.
+
+When a writer wants to access the resource, it first acquires the writer semaphore, which prevents any new readers from starting. If there are any active readers, the writer waits until they all finish and release their locks. Then the writer can access the resource exclusively to perform its task.
+
+When a reader wants to access the resource, it first acquires the reader semaphore. If no writers are currently accessing the resource (i.e., the writer semaphore is available), the reader can proceed to access the resource. If a writer is waiting to access the resource, the reader must wait until the writer completes its task and releases the writer semaphore. This ensures that the writer has exclusive access to the resource and that readers do not interfere with the writer's task.
+
+When a reader finishes accessing the resource, it releases the reader semaphore, indicating that it is no longer accessing the resource. If there are any writers waiting, the last reader to leave signals the writer that it is safe to proceed. Upon completing its task, the writer releases the writer semaphore, allowing waiting readers and writers to access the resource again.
+
+Overall, the readers-writers problem is a complex synchronization challenge that requires careful management of semaphores to ensure that readers and writers can access shared resources without interfering with each other's work.
+```
+
 # Initialisation :- 
 ```cpp
 Semaphore in = 1
