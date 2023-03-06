@@ -1,5 +1,9 @@
 # Strave-free-readers-writers-problem
 
+# Thought for solution 
+```cpp
+The key problem is that the writer gets starved in the basic solution because we implement two queues : one for the reader and one for the writers but now we will allot only a single queue consisting of writers and readers like r r r w r r this FIFO based list will ensure that writers won't be starved by incoming read requests. 
+```
 # Explanation
 ```py
 In the readers-writers problem, multiple readers can access the shared resource simultaneously, but only one writer can access it at a time. This is because a writer may modify the resource, and if multiple writers access it concurrently, they may overwrite each other's changes or create inconsistent data.
